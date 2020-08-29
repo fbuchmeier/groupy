@@ -15,3 +15,22 @@ Groupy is 100% open source and free to use.
 
 Groupy's development is planned to start in September 2020.
 
+## Development
+
+### Build image and start development server
+
+```sh
+docker build -t groupy .
+docker run \
+    -d \
+    -p 8000:8000 \
+    -v $(pwd):/app \
+    --name groupy \
+    groupy
+```
+
+### Migrate database
+
+```sh
+docker exec groupy python3 manage.py migrate
+```
